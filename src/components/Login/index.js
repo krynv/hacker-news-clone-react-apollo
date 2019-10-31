@@ -29,6 +29,18 @@ class Login extends React.Component {
         name: '',
     }
 
+    _confirm = async data => {
+        const { token } = this.state.login ? data.login : data.signup;
+
+        this._saveUserData(token);
+
+        this.props.history.push(`/`);
+    }
+
+    _saveUserData = token => {
+        localStorage.setItem(AUTH_TOKEN, token);
+    }
+
     render() {
         const { login, email, password, name } = this.state;
 
@@ -77,18 +89,6 @@ class Login extends React.Component {
                 </div>
             </div>
         )
-    }
-
-    _confirm = async data => {
-        const { token } = this.state.login ? data.login : data.signup;
-
-        this._saveUserData(token);
-
-        this.props.history.push(`/`);
-    }
-
-    _saveUserData = token => {
-        localStorage.setItem(AUTH_TOKEN, token);
     }
 }
 
