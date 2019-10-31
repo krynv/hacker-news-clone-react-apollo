@@ -20,7 +20,7 @@ class App extends React.Component {
 						<Route exact path="/create" component={CreateLink} />
 						<Route exact path="/new/:page" component={LinkList} />
 						<Route exact path="/login" component={Login} />
-						<Route exact path='/search' component={Search} />
+						<Route exact path="/search" component={Search} />
 					</Switch>
 				</div>
 			</div>
