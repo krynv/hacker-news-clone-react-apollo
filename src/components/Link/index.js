@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { AUTH_TOKEN } from '../../constants';
+import { AUTH_TOKEN } from '../../constants'
 import { timeDifferenceForDate } from '../../utils';
 
 class Link extends React.Component {
@@ -25,7 +25,8 @@ class Link extends React.Component {
                     </div>
 
                     <div className="f6 lh-copy gray">
-                        {this.props.link.votes.length} votes | by{' '}
+                        {this.props.link.votes.length}
+                        {this.props.link.votes.length === 1 ? ` vote` : ` votes`} | by{' '}
                         {this.props.link.postedBy ? this.props.link.postedBy.name : 'Unknown'}{' '}
                         {timeDifferenceForDate(this.props.link.createdAt)}
                     </div>
