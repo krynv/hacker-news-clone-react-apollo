@@ -40,7 +40,7 @@ class Link extends React.Component {
                             this.props.updateStoreAfterVote(store, vote, this.props.link.id)
                         }>
                             {voteMutation => (
-                                <div className="ml1 gray f11" onClick={voteMutation}>
+                                <div className="ml1 gray f11 pointer" onClick={voteMutation}>
                                     ▲
                                 </div>
                             )}
