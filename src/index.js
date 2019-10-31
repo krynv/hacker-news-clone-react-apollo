@@ -10,7 +10,7 @@ import { createHttpLink } from 'apollo-link-http';
 import { InMemoryCache } from 'apollo-cache-inmemory';
 
 const httpLink = createHttpLink({
-    uri: 'http://localhost:4000'
+    uri: 'http://localhost:4000' // please use https://github.com/krynv/hacker-news-clone-with-prisma
 });
 
 const client = new ApolloClient({
