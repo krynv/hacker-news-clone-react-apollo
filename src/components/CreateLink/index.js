@@ -1,5 +1,19 @@
 import React from 'react';
 
+import { Mutation } from 'react-apollo';
+import gql from 'graphql-tag';
+
+const POST_MUTATION = gql`
+    mutation PostMutation($description: String!, $url: String!) {
+        post(description: $description, url: $url) {
+            id
+            createdAt
+            url
+            description
+        }
+    }
+`
+
 class CreateLink extends React.Component {
 
     state = {
@@ -13,6 +27,7 @@ class CreateLink extends React.Component {
 
         return (
             <div>
+
                 <div className="flex flex-column mt3">
                     <input
                         className="mb2"
@@ -31,7 +46,11 @@ class CreateLink extends React.Component {
                     />
 
                 </div>
-                <button onClick={`do stuff`}>Submit</button>
+
+                <Mutation mutation={POST_MUTATION} variables={{ description, url }}>
+                    {postMutation => <button onClick={postMutation}>Submit</button>}
+                </Mutation>
+
             </div>
         );
     }
